@@ -6,33 +6,48 @@
     <title>Weather Application</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-left">
-        <div class="choices">
-            <i class="fas fa-grip-horizontal"></i>
-
+   <nav class="sidebar">
+        <div class="sidebar-top">
+            <a href="index.html" class="sidebar-item"><i class="fa-solid fa-house"></i></a>
+            <a href="#" class="sidebar-item" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#" class="sidebar-item"><i class="fa-regular fa-star"></i></a>
         </div>
 
-        <div class="notifications">
-            <i class="fa-solid fa-bell"></i>
+        <div class="sidebar-bottom">
+            <a href="#" class="sidebar-item"><i class="fa-regular fa-user"></i></a>
+            <a href="#" class="sidebar-item"><i class="fa-solid fa-gear"></i></a>
         </div>
+   </nav>
 
-        <div class="current-location">
-            <i class="fa-solid fa-location-dot"></i>
+   <div class="weather-dashboard">
+       <div class="weather-info">
+            <h2 id="location">City, Country</h2>
+            <div id="temperature">19°C</div>
+            <div id="weather-description">Clear</div>
+            <div id="additonal-info">
+                <p>Feels Like <span id="feels-like">19°C</span></p>
+                <p>Wind <span id="wind-speed">18 km/h</span></p>
+                <p>Visibility <span id="visibility">20 km</span></p>
+                <p>Humidity <span id="humidity">62%</span></p>
+                <p>Barometer <span id="pressure">1011.00 mb</span></p>
+                <p>Dew Point <span id="dew-point">16°C</span></p>
+            </div>
+       </div>
+   </div>
+
+   <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Search for a City</h3>
+            <input type="text" id="search-input" placeholder="Enter City Name" />
+            <button onclick="searchCity()">Search</button>
         </div>
-    </div>
-
-    <div class="city-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" class="searchbox" placeholder="Search Cities...">
-    </div>
-
-    </nav>
-
-    
-
+   </div>
 
     <script src="script.js"></script>
 </body>
